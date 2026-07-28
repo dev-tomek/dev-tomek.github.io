@@ -9,6 +9,11 @@
   {% seo %}
   <!-- End SEO -->
 
+  <!-- opencode.ai-style typography: IBM Plex Mono everywhere -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="stylesheet" type="text/css" href="/css/override.css">
 
@@ -32,4 +37,23 @@
 
   <script type="text/javascript"> hljs.highlightAll(); </script>
   <!-- end highlight.js support -->
+
+  <!-- Dark-mode syntax colors: the github.css hljs theme hardcodes dark
+       tones that are unreadable on the dark opencode background. -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .hljs { color: hsl(0, 4%, 71%); }
+      .hljs-keyword, .hljs-selector-tag, .hljs-subst,
+      .hljs-title, .hljs-section, .hljs-selector-id { color: hsl(62, 90%, 72%); }
+      .hljs-string, .hljs-doctag { color: hsl(20, 70%, 68%); }
+      .hljs-number, .hljs-literal, .hljs-variable,
+      .hljs-template-variable, .hljs-tag .hljs-attr,
+      .hljs-built_in, .hljs-builtin-name { color: hsl(190, 55%, 62%); }
+      .hljs-type, .hljs-class .hljs-title { color: hsl(210, 55%, 68%); }
+      .hljs-tag, .hljs-name, .hljs-attribute { color: hsl(210, 50%, 70%); }
+      .hljs-comment, .hljs-quote, .hljs-meta { color: hsl(0, 2%, 49%); }
+      .hljs-deletion { background: hsla(0, 60%, 40%, 0.25); }
+      .hljs-addition { background: hsla(120, 40%, 40%, 0.25); }
+    }
+  </style>
 </head>
